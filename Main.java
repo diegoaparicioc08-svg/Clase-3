@@ -12,7 +12,7 @@ public class Main {
         }
     }
 
-    public static int contarPares(int[] arreglo, int indice) {
+    public static int Pares(int[] arreglo, int indice) {
 
         if (indice == arreglo.length) {
             return 0;
@@ -20,10 +20,10 @@ public class Main {
 
         int suma = (arreglo[indice] % 2 == 0) ? 1 : 0;
 
-        return suma + contarPares(arreglo, indice + 1);
+        return suma + Pares(arreglo, indice + 1);
     }
 
-    public static int contarNotasAltas(Estudiante[] estudiantes) {
+    public static int NotasAltas(Estudiante[] estudiantes) {
         int contador = 0;
 
         for (Estudiante e : estudiantes) {
@@ -34,7 +34,7 @@ public class Main {
         return contador;
     }
 
-    public static double promedioEdad(Estudiante[] estudiantes) {
+    public static double Edades(Estudiante[] estudiantes) {
         int suma = 0;
 
         for (Estudiante e : estudiantes) {
@@ -59,13 +59,13 @@ public class Main {
             edades[i] = estudiantes[i].edad;
         }
 
-        int pares = contarPares(edades, 0);
+        int pares = Pares(edades, 0);
         System.out.println("Cantidad de edades pares: " + pares);
 
-        int notasAltas = contarNotasAltas(estudiantes);
+        int notasAltas = NotasAltas(estudiantes);
         System.out.println("Estudiantes con nota >= 90: " + notasAltas);
 
-        double promedio = promedioEdad(estudiantes);
+        double promedio = Edades(estudiantes);
         System.out.println("Promedio de edad: " + promedio);
     }
 }
